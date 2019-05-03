@@ -6,17 +6,24 @@ namespace WordCounter.Controllers
 {
   public class GameController : Controller
   {
-    [HttpGet("/object/new")]
+    [HttpGet("/game/new")]
     public ActionResult New()
     {
      return View();
     }
 
-    [HttpPost("/object")]
+    [HttpGet("/game")]
+    public ActionResult Index()
+    {
+      List<Game> allGames = Game.GetAllGames();
+      return View(allGames);
+    }
+
+    [HttpPost("/game")]
     public ActionResult Create(string wordInput, string sentenceInput)
     {
       Game.ClearAll();
-      Game myGame = new Game();
+      Game myGame = new Game(wordInput, sentenceInput);
       return RedirectToAction("Index");
     }
   }

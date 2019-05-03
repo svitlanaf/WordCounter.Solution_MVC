@@ -7,7 +7,8 @@ namespace WordCounter.Models
     private string _wordInput;
     private string _sentenceInput;
 
-    public Words (string wordInput, string sentenceInput)
+    private static List<Game> _allGames = new List<Game>{};
+    public Game (string wordInput, string sentenceInput)
     {
       _wordInput = wordInput;
       _sentenceInput = sentenceInput;
@@ -23,6 +24,16 @@ namespace WordCounter.Models
       return _sentenceInput;
     }
 
+    public static List<Game> GetAllGames()
+    {
+      return _allGames;
+    }
+
+    public static void ClearAll()
+    {
+      _allGames.Clear();
+    }
+
     public bool CheckWordIsString()
     {
       if (_wordInput == "")
@@ -31,7 +42,7 @@ namespace WordCounter.Models
       }
       foreach (char character in _wordInput)
       {
-        if (!Char.IsLetter(character))
+        if (!char.IsLetter(character))
         {
           return false;
         }
@@ -62,7 +73,4 @@ namespace WordCounter.Models
   }
 }
 
-    // public static void ClearAll()
-    // {
-    //   _allGames.Clear();
-    // }
+    
