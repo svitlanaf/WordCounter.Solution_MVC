@@ -18,12 +18,20 @@ namespace WordCounter.Tests
         Assert.IsInstanceOfType(gameView, typeof(ViewResult));
     }
 
-    // [HttpGet("/game/new")]
-    // public ActionResult NewGame()
-    // {
-    //  return View("New");
-    // }
-
+    [TestMethod]
+    public void Create_RedirectsToCorrectAction_Index()
+    {
+        GameController controller = new GameController();
+        RedirectToActionResult actionResult = controller.Create("Walk the dog") as RedirectToActionResult;
+        string result = actionResult.ActionName;
+        Assert.AreEqual(result, "Index");
+    }
   }
 }
 
+// [HttpPost("/game/result")]
+//     public ActionResult Result(string wordInput, string sentenceInput)
+//     {
+//       Game myGame = new Game(wordInput, sentenceInput);
+//       return View("Index", myGame);
+//     }
