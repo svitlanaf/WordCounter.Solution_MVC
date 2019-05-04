@@ -1,6 +1,6 @@
 # _**Word Counter**_
 
-## _Creating a Word Counter using C# and .NET 4/26/2019_
+## _Creating a Word Counter using C#, .NET and ASP.NET Core MVC 5/03/2019_
 
 #### _**By Svitlana Filatova**_
 
@@ -30,7 +30,7 @@ _List of specs:_
 
 * _To use this application you need to have .NET (ver. 2.2) Framework and Mono tool installed on your computer._
 * _Clone this repository on your desktop._
-* _Open Terminal (for Mac users) or PowerShell (for Windows users), navigate to WordCounter folder(cd .../Desktop/WordCounterSolution/WordCounter) and run the following command: mcs Program.cs Models/Word.cs && mono Program.exe._
+* _Open Terminal (for Mac users) or PowerShell (for Windows users), navigate to WordCounter folder(cd .../Desktop/WordCounterSolution/WordCounter) and run the following command: mcs dotnet restore && dotnet build && dotnet run. Copy http://localhost:5000 link and paste in the browser of your choise._
 
 
 ## Known Bugs
@@ -44,7 +44,7 @@ _If you find any issue regarding this application please contact Svitlana Filato
 
 ## Technologies Used
 
-_C#/.NET_
+_C#/.NET_/ASP.NET Core MVC
 
 
 ### License

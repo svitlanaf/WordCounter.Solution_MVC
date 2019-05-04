@@ -10,16 +10,20 @@ namespace WordCounter.Tests
   public class GameControllerTest
   {
 
-[TestMethod]
     [TestMethod]
-    public void Index_HasCorrectModelType_ItemList()
+    public void NewGame_ReturnsCorrectView_True()
     {
-      ItemController controller = new ItemController();
-      ViewResult indexView = controller.Index() as ViewResult;
-      var result = indexView.ViewData.Model;
-      Assert.IsInstanceOfType(result, typeof(List<Item>));
+        GameController controller = new GameController();
+        ActionResult gameView = controller.NewGame();
+        Assert.IsInstanceOfType(gameView, typeof(ViewResult));
     }
 
+    // [HttpGet("/game/new")]
+    // public ActionResult NewGame()
+    // {
+    //  return View("New");
+    // }
 
   }
 }
+
