@@ -1,9 +1,10 @@
 @using WordCounter.Models;
+@using System.Collections.Generic;
 
+@model Game;
 
+<p>@Model.GetWord() appears @Model.GetCount() times in the sentence.</p>
 
-
-<!-- Words testWords = new Words(userWord, userSentence);
-        Console.WriteLine("Your word '" + userWord + "' appears " + testWords.CountWordMatchInSentence() + "  times in the sentence.");
-        }
-      } -->
+<form action="/game/new" method="get">
+  <button type="submit" name="restart">Restart</button>
+</form>

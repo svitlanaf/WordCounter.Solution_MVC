@@ -7,7 +7,6 @@ namespace WordCounter.Models
     private string _wordInput;
     private string _sentenceInput;
 
-    private static List<Game> _allGames = new List<Game>{};
     public Game (string wordInput, string sentenceInput)
     {
       _wordInput = wordInput;
@@ -22,16 +21,6 @@ namespace WordCounter.Models
     public string GetSentence()
     {
       return _sentenceInput;
-    }
-
-    public static List<Game> GetAllGames()
-    {
-      return _allGames;
-    }
-
-    public static void ClearAll()
-    {
-      _allGames.Clear();
     }
 
     public bool CheckWordIsString()
@@ -50,7 +39,7 @@ namespace WordCounter.Models
       return true;
     }
 
-    public int CountWordMatchInSentence()
+    public int GetCount()
     {
       int count = 0;
       if (CheckWordIsString() == false)
