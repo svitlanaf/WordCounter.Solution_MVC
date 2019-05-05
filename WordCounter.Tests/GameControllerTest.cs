@@ -19,19 +19,11 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
-    public void Create_RedirectsToCorrectAction_Index()
+    public void Result_ReturnsCorrectView_ReturnCount1_Index()
     {
         GameController controller = new GameController();
-        RedirectToActionResult actionResult = controller.Create("Walk the dog") as RedirectToActionResult;
-        string result = actionResult.ActionName;
-        Assert.AreEqual(result, "Index");
+        ActionResult gameView = controller.Result("sun", "sun");
+        Assert.AreEqual("Index", @Model.GetCount());
     }
   }
 }
-
-// [HttpPost("/game/result")]
-//     public ActionResult Result(string wordInput, string sentenceInput)
-//     {
-//       Game myGame = new Game(wordInput, sentenceInput);
-//       return View("Index", myGame);
-//     }

@@ -1,5 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WordCounter;
+using WordCounter.Models;
 
 namespace WordCounter.Tests
 {
@@ -49,77 +49,84 @@ namespace WordCounter.Tests
     public void CheckWordsAreMatching_UserInputsWordAndSentenceOfOneWord_ReturnCount1()
     {
       Game testWords = new Game("sun", "sun");
-      Assert.AreEqual(1, testWords.CountWordMatchInSentence());
+      Assert.AreEqual(1, testWords.GetCount());
     }
 
     [TestMethod]
     public void CheckWordsAreNotMatching_UserInputsWordAndSentenceOfOneWord_ReturnCount0()
     {
       Game testWords = new Game("sun", "cat");
-      Assert.AreEqual(0, testWords.CountWordMatchInSentence());
+      Assert.AreEqual(0, testWords.GetCount());
     }
 
     [TestMethod]
     public void CheckWordsAreNotCaseSensitive1_UserInputsWordAndSentenceOfOneWord_ReturnCount1()
     {
       Game testWords = new Game("sun", "sUn");
-      Assert.AreEqual(1, testWords.CountWordMatchInSentence());
+      Assert.AreEqual(1, testWords.GetCount());
     }
 
     [TestMethod]
     public void CheckWordsAreNotCaseSensitive2_UserInputsWordAndSentenceOfOneWord_ReturnCount1()
     {
       Game testWords = new Game("fan", "FAN");
-      Assert.AreEqual(1, testWords.CountWordMatchInSentence());
+      Assert.AreEqual(1, testWords.GetCount());
     }
 
     [TestMethod]
     public void CheckWordIsNone_UserInputWordIsNone_ReturnCount0()
     {
       Game testWords = new Game("", "dog");
-      Assert.AreEqual(0, testWords.CountWordMatchInSentence());
+      Assert.AreEqual(0, testWords.GetCount());
     }
 
     [TestMethod]
     public void CheckSentenceIsNone_UserInputSentenceIsNone_ReturnCount0()
     {
       Game testWords = new Game("cat", "");
-      Assert.AreEqual(0, testWords.CountWordMatchInSentence());
+      Assert.AreEqual(0, testWords.GetCount());
     }
 
     [TestMethod]
     public void CheckSentenceAndWordAreNone_UserInputSentenceIsNoneAndUserInputWordIsNone_ReturnCount0()
     {
       Game testWords = new Game("", "");
-      Assert.AreEqual(0, testWords.CountWordMatchInSentence());
+      Assert.AreEqual(0, testWords.GetCount());
     }
 
     [TestMethod]
     public void CheckWordsAreMatching_UserInputsWordAndSentence_ReturnCount1()
     {
       Game testWords = new Game("sun", "sun fun run");
-      Assert.AreEqual(1, testWords. CountWordMatchInSentence());
+      Assert.AreEqual(1, testWords.GetCount());
     }
 
     [TestMethod]
     public void CheckWordsAreNotMatching_UserInputsWordAndSentence_ReturnCount0()
     {
       Game testWords = new Game("sun", "gun fun run");
-      Assert.AreEqual(0, testWords.CountWordMatchInSentence());
+      Assert.AreEqual(0, testWords.GetCount());
     }
 
     [TestMethod]
     public void CheckWordsInSentenceAreNotCaseSensitive_UserInputsWordAndSentence_ReturnCount3()
     {
       Game testWords = new Game("fan", "FAN Fan faN man");
-      Assert.AreEqual(3, testWords.CountWordMatchInSentence());
+      Assert.AreEqual(3, testWords.GetCount());
     }
 
     [TestMethod]
     public void CheckFullWordsAreMatching_UserInputsWordAndSentenceThatHaveWordsStartsWithSameLettersAsWord_ReturnCount1()
     {
       Game testWords = new Game("cat", "Cat has a hat at the cathedral");
-      Assert.AreEqual(1, testWords.CountWordMatchInSentence());
+      Assert.AreEqual(1, testWords.GetCount());
+    }
+
+   [TestMethod]
+    public void CheckWordContainsWhitespace_UserInputWordAndWhitespace_ReturnCount0()
+    {
+      Game testWords = new Game("cat ", "cat");
+      Assert.AreEqual(0, testWords.GetCount());
     }
 
     }
