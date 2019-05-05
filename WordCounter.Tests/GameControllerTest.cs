@@ -22,8 +22,9 @@ namespace WordCounter.Tests
     public void Result_ReturnsCorrectView_ReturnCount1_Index()
     {
         GameController controller = new GameController();
-        ActionResult gameView = controller.Result("sun", "sun");
-        Assert.AreEqual("Index", @Model.GetCount());
+        ViewResult gameView = controller.Result("sun", "sun") as ViewResult;
+        Game myGame = gameView.ViewData.Model as Game;
+        Assert.AreEqual(1, myGame.GetCount());
     }
   }
 }
