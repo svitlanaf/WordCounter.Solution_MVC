@@ -19,7 +19,7 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
-    public void Result_ReturnsCorrectView_ReturnCount1_Index()
+    public void Result_ReturnsCorrectView_ReturnCount1()
     {
         GameController controller = new GameController();
         ViewResult gameView = controller.Result("sun", "sun") as ViewResult;

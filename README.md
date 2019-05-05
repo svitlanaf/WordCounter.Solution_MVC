@@ -25,6 +25,7 @@ _List of specs:_
 | User inputs 1 word and a sentence of few words (some words have uppercase letters), and some of them are matching                                           | Word: "cat" Sentence: "CAT in The hat caT mad cAt"     | "Your word 'cat' appears 3 times in the sentence." |
 | User inputs 1 word and a sentence of few words (some words have uppercase letters), and none of them are matching                                           | Word: "cat" Sentence: "hAT in The fat maT mad fAt"     | "Your word 'cat' appears 0 times in the sentence." |
 | User inputs 1 word and a sentence of few words (some words have uppercase letters), and some of sentence words starts with the same letters that a word has | Word: "cat" Sentence: "Cat has a hat at the cathedral" | "Your word 'cat' appears 1 times in the sentence." |
+| User inputs 1 word with a whitespace after it and a sentence of few words                                                                                   | Word: "cat " Sentence: "Cat has a hat at the cathedral"| "Your word 'cat ' appears 0 times in the sentence."|
 
 ## Setup/Installation Requirements
 
