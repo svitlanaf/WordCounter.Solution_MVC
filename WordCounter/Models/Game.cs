@@ -25,7 +25,7 @@ namespace WordCounter.Models
 
     public bool CheckWordIsString()
     {
-      if (_wordInput == "")
+      if (_wordInput == "" || _wordInput == null)
       {
         return false;
       }
@@ -42,7 +42,7 @@ namespace WordCounter.Models
     public int GetCount()
     {
       int count = 0;
-      if (CheckWordIsString() == false)
+      if (CheckWordIsString() == false || _sentenceInput == null)
       {
         return 0;
       }

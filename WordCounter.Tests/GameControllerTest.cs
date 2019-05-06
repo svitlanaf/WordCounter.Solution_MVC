@@ -13,18 +13,28 @@ namespace WordCounter.Tests
     [TestMethod]
     public void NewGame_ReturnsCorrectView_True()
     {
-        GameController controller = new GameController();
-        ActionResult gameView = controller.NewGame();
-        Assert.IsInstanceOfType(gameView, typeof(ViewResult));
+      GameController controller = new GameController();
+      ActionResult gameView = controller.NewGame();
+      Assert.IsInstanceOfType(gameView, typeof(ViewResult));
     }
+
+    [TestMethod]
+    public void Result_HasCorrectModelType_True()
+    {
+      GameController controller = new GameController();
+      ViewResult gameView = controller.Result("sun", "sun") as ViewResult;
+      var a = gameView.ViewData.Model;
+      Assert.IsInstanceOfType(a, typeof(Game));
+    }
+
 
     [TestMethod]
     public void Result_ReturnsCorrectView_ReturnCount1()
     {
-        GameController controller = new GameController();
-        ViewResult gameView = controller.Result("sun", "sun") as ViewResult;
-        Game myGame = gameView.ViewData.Model as Game;
-        Assert.AreEqual(1, myGame.GetCount());
+      GameController controller = new GameController();
+      ViewResult gameView = controller.Result("sun", "sun") as ViewResult;
+      Game myGame = gameView.ViewData.Model as Game;
+      Assert.AreEqual(1, myGame.GetCount());
     }
   }
 }
