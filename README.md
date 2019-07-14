@@ -31,7 +31,7 @@ _List of specs:_
 
 * _To use this application you need to have .NET (ver. 2.2) Framework and Mono tool installed on your computer._
 * _Clone this repository on your desktop._
-* _Open Terminal (for Mac users) or PowerShell (for Windows users), navigate to WordCounter folder(cd .../Desktop/WordCounterSolution/WordCounter) and run the following command: mcs dotnet restore && dotnet build && dotnet run. Copy http://localhost:5000 link and paste in the browser of your choise._
+* _Open Terminal (for Mac users) or PowerShell (for Windows users), navigate to WordCounter folder(cd .../Desktop/WordCounterSolution/WordCounter) and run the following command: dotnet run. Copy http://localhost:5000 link and paste in the browser of your choise._
 
 
 ## Known Bugs
